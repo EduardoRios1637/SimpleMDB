@@ -64,7 +64,7 @@ public class DefaultMovieService : IMovieService
 		var movie = await movieRepository.DeleteMovie(id);
 		var result = movie == null
 		? new Result<Movie>(
-		new Exception($"Could not delete movie with id {id}."), (int)HttpStatusCode.NotFound)
+			new Exception($"Could not delete movie with id {id}."), (int)HttpStatusCode.NotFound)
 		: new Result<Movie>(movie, (int)HttpStatusCode.OK);
 		return result;
 	}
